@@ -21,7 +21,7 @@
                 <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
                     <div class="relative h-64 overflow-hidden bg-gray-200">
                         @if($product->featured_image)
-                            <img src="{{ Storage::url($product->featured_image) }}" alt="{{ $product->name }}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            <img src="{{ url(Storage::url($product->featured_image)) }}" alt="{{ $product->name }}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
                         @else
                             <img src="https://placehold.co/400x300/e1e1e1/333333?text={{ urlencode($product->name) }}" alt="{{ $product->name }}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
                         @endif

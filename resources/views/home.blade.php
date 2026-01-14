@@ -10,7 +10,7 @@
                     <div class="swiper-slide relative">
                         <div class="absolute inset-0 bg-black opacity-40"></div>
                         @if($slider->image)
-                             <img src="{{ Storage::url($slider->image) }}" alt="{{ $slider->title }}" class="w-full h-[500px] md:h-[700px] object-cover">
+                            <img src="{{ url(Storage::url($slider->image)) }}" alt="{{ $slider->title }}" class="w-full h-[500px] md:h-[700px] object-cover">
                         @else
                             <img src="https://placehold.co/1920x800/005eb8/ffffff?text={{ urlencode($slider->title) }}" alt="{{ $slider->title }}" class="w-full h-[500px] md:h-[700px] object-cover">
                         @endif
@@ -110,7 +110,7 @@
                     <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
                         <div class="relative h-64 overflow-hidden bg-gray-100">
                             @if($product->featured_image)
-                                <img src="{{ Storage::url($product->featured_image) }}" alt="{{ $product->name }}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                                <img src="{{ url(Storage::url($product->featured_image)) }}" alt="{{ $product->name }}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
                             @else
                                 <img src="https://placehold.co/400x300/e1e1e1/333333?text={{ urlencode($product->name) }}" alt="{{ $product->name }}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
                             @endif
@@ -153,7 +153,7 @@
                 @forelse($latestNews as $news)
                     <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
                         @if($news->image)
-                            <img src="{{ Storage::url($news->image) }}" alt="{{ $news->title }}" class="w-full h-48 object-cover">
+                            <img src="{{ url(Storage::url($news->image)) }}" alt="{{ $news->title }}" class="w-full h-48 object-cover">
                         @else
                              <img src="https://placehold.co/400x250/e1e1e1/333333?text=News" alt="{{ $news->title }}" class="w-full h-48 object-cover">
                         @endif

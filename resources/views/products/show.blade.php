@@ -36,13 +36,13 @@
                         <div class="swiper-wrapper">
                             @if($product->images->count() > 0)
                                 @foreach($product->images as $image)
-                                    <div class="swiper-slide cursor-zoom-in" @click="showLightbox = true; lightboxImage = '{{ Storage::url($image->image) }}'">
-                                        <img src="{{ Storage::url($image->image) }}" alt="{{ $image->title ?? $product->name }}" class="w-full h-auto">
+                                    <div class="swiper-slide cursor-zoom-in" @click="showLightbox = true; lightboxImage = '{{ url(Storage::url($image->image)) }}'">
+                                        <img src="{{ url(Storage::url($image->image)) }}" alt="{{ $image->title ?? $product->name }}" class="w-full h-auto">
                                     </div>
                                 @endforeach
                             @elseif($product->featured_image)
-                                <div class="swiper-slide cursor-zoom-in" @click="showLightbox = true; lightboxImage = '{{ Storage::url($product->featured_image) }}'">
-                                    <img src="{{ Storage::url($product->featured_image) }}" alt="{{ $product->name }}" class="w-full h-auto">
+                                <div class="swiper-slide cursor-zoom-in" @click="showLightbox = true; lightboxImage = '{{ url(Storage::url($product->featured_image)) }}'">
+                                    <img src="{{ url(Storage::url($product->featured_image)) }}" alt="{{ $product->name }}" class="w-full h-auto">
                                 </div>
                             @else    
                                 <div class="swiper-slide">
@@ -88,7 +88,7 @@
                     <div class="flex space-x-4">
                         <a href="{{ route('contact') }}?product={{ urlencode($product->name) }}" class="flex-1 bg-primary text-white text-center font-bold py-3 px-6 rounded-full hover:bg-blue-600 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">Book Now</a>
                         @if($product->brochure)
-                            <a href="{{ Storage::url($product->brochure) }}" target="_blank" class="flex-1 border-2 border-primary text-primary font-bold py-3 px-6 rounded-full hover:bg-primary hover:text-white transition duration-300 text-center">Download Brochure</a>
+                            <a href="{{ url(Storage::url($product->brochure)) }}" target="_blank" class="flex-1 border-2 border-primary text-primary font-bold py-3 px-6 rounded-full hover:bg-primary hover:text-white transition duration-300 text-center">Download Brochure</a>
                         @else
                             <button class="flex-1 border-2 border-primary text-gray-400 font-bold py-3 px-6 rounded-full cursor-not-allowed text-center" disabled>Brochure Needed</button>
                         @endif

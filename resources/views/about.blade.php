@@ -45,7 +45,7 @@
                     <div class="bg-white rounded-lg overflow-hidden shadow-sm group">
                         <div class="relative h-64 bg-gray-200">
                              @if($member->image)
-                                <img src="{{ Storage::url($member->image) }}" alt="{{ $member->name }}" class="w-full h-full object-cover">
+                                <img src="{{ url(Storage::url($member->image)) }}" alt="{{ $member->name }}" class="w-full h-full object-cover">
                             @else
                                 <img src="https://placehold.co/400x400/e1e1e1/333333?text={{ urlencode($member->name) }}" alt="{{ $member->name }}" class="w-full h-full object-cover">
                             @endif
@@ -89,7 +89,7 @@
                     <div class="text-center group">
                         <div class="bg-gray-50 rounded-lg p-6 mb-4 h-48 flex items-center justify-center transition duration-300 group-hover:shadow-md">
                             @if($award->image)
-                                <img src="{{ Storage::url($award->image) }}" alt="{{ $award->title }}" class="max-h-full max-w-full">
+                                <img src="{{ url(Storage::url($award->image)) }}" alt="{{ $award->title }}" class="max-h-full max-w-full">
                             @else
                                 <div class="text-gray-400 font-bold text-xl">{{ $award->year }}</div>
                             @endif

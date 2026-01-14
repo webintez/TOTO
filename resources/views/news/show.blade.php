@@ -29,7 +29,7 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
                 @if($article->image)
-                    <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}" class="w-full h-96 object-cover">
+                    <img src="{{ url(Storage::url($article->image)) }}" alt="{{ $article->title }}" class="w-full h-96 object-cover">
                 @endif
                 
                 <div class="p-8 md:p-12">

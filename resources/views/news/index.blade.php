@@ -9,7 +9,7 @@
                 @forelse($news as $article)
                 <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
                     @if($article->image)
-                        <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}" class="w-full h-48 object-cover">
+                        <img src="{{ url(Storage::url($article->image)) }}" alt="{{ $article->title }}" class="w-full h-48 object-cover">
                     @else
                         <img src="https://placehold.co/400x250/e1e1e1/333333?text={{ urlencode($article->title) }}" alt="{{ $article->title }}" class="w-full h-48 object-cover">
                     @endif
