@@ -4,8 +4,8 @@
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
                 <a href="{{ route('home') }}" class="flex items-center">
-                    <span class="text-2xl font-bold text-primary tracking-tighter">LORDS</span>
-                    <span class="ml-1 text-2xl font-bold text-gray-800 tracking-tighter">MOBILITY</span>
+                    <span class="text-2xl font-bold text-primary tracking-tighter">SERVAITAL</span>
+                    <!-- <span class="ml-1 text-2xl font-bold text-gray-800 tracking-tighter">MOBILITY</span> -->
                 </a>
             </div>
 

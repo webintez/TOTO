@@ -4,8 +4,8 @@
             <!-- Company Info -->
             <div>
                 <div class="flex items-center mb-6">
-                    <span class="text-2xl font-bold text-white tracking-tighter">LORDS</span>
-                    <span class="ml-1 text-2xl font-bold text-primary tracking-tighter">MOBILITY</span>
+                    <span class="text-2xl font-bold text-white tracking-tighter">SERVAITAL</span>
+
                 </div>
                 <p class="text-gray-400 mb-6 leading-relaxed">
                     {{ $globalSettings['site_description'] ?? 'Lords Mobility is committed to providing eco-friendly and high-performance electric vehicles.' }}
@@ -84,6 +84,7 @@
 
         <div class="border-t border-gray-800 mt-12 pt-8 text-center sm:flex sm:justify-between">
             <p class="text-gray-500 text-sm">&copy; {{ date('Y') }} {{ config('app.name', 'Lords Mobility') }}. All rights reserved.</p>
+            <p class="text-gray-600 text-xs mt-1">Developed by <a href="https://webintez.com/" target="_blank" class="text-gray-500 hover:text-primary transition duration-150">Webintez</a></p>
             <div class="mt-4 sm:mt-0">
                 <a href="#" class="text-gray-500 hover:text-white text-sm mr-6">Privacy Policy</a>
                 <a href="#" class="text-gray-500 hover:text-white text-sm">Terms & Conditions</a>
