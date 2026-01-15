@@ -18,8 +18,7 @@
                             </div>
                             <div>
                                 <h3 class="font-bold text-gray-900">Head Office</h3>
-                                <p class="text-gray-600">A-123, Industrial Area Phase II,</p>
-                                <p class="text-gray-600">New Delhi, Delhi 110020</p>
+                                <p class="text-gray-600">{!! nl2br(e($globalSettings['contact_address'] ?? '')) !!}</p>
                             </div>
                         </div>
 
@@ -29,8 +28,7 @@
                             </div>
                             <div>
                                 <h3 class="font-bold text-gray-900">Phone</h3>
-                                <p class="text-gray-600">+91 98765 43210</p>
-                                <p class="text-gray-600">+91 11 2345 6789</p>
+                                <p class="text-gray-600">{{ $globalSettings['contact_phone'] ?? '' }}</p>
                             </div>
                         </div>
 
@@ -40,8 +38,7 @@
                             </div>
                             <div>
                                 <h3 class="font-bold text-gray-900">Email</h3>
-                                <p class="text-gray-600"><a href="mailto:info@lordsmobility.com" class="hover:text-primary">info@lordsmobility.com</a></p>
-                                <p class="text-gray-600"><a href="mailto:sales@lordsmobility.com" class="hover:text-primary">sales@lordsmobility.com</a></p>
+                                <p class="text-gray-600"><a href="mailto:{{ $globalSettings['contact_email'] ?? '' }}" class="hover:text-primary">{{ $globalSettings['contact_email'] ?? '' }}</a></p>
                             </div>
                         </div>
                     </div>
@@ -83,7 +80,9 @@
             <!-- Map -->
             <div class="mt-12 bg-white rounded-xl shadow-md p-4 h-96">
                 <!-- Placeholder for Google Map -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.0688975472578!3d28.52728034389636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1705307000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+                <div class="w-full h-full rounded-lg overflow-hidden">
+                    {!! $globalSettings['google_map_embed'] ?? '' !!}
+                </div>
             </div>
         </div>
     </section>
