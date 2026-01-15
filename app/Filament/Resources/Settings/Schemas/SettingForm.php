@@ -16,7 +16,7 @@ class SettingForm
                     ->required(),
                 
                 \Filament\Forms\Components\FileUpload::make('value')
-                    ->hidden(fn (\Filament\Forms\Get $get) => $get('type') !== 'image')
+                    ->hidden(fn ($get) => $get('type') !== 'image')
                     ->disk('public')
                     ->directory('settings')
                     ->image()
@@ -24,7 +24,7 @@ class SettingForm
                     ->columnSpanFull(),
 
                 Textarea::make('value')
-                    ->hidden(fn (\Filament\Forms\Get $get) => $get('type') === 'image')
+                    ->hidden(fn ($get) => $get('type') === 'image')
                     ->columnSpanFull(),
 
                 TextInput::make('group')
