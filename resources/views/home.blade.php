@@ -10,9 +10,9 @@
                     <div class="swiper-slide relative">
                         <div class="absolute inset-0 bg-black opacity-40"></div>
                         @if($slider->image)
-                            <img src="{{ url(Storage::url($slider->image)) }}" alt="{{ $slider->title }}" class="w-full h-[500px] md:h-[700px] object-cover">
+                            <img src="{{ url(Storage::url($slider->image)) }}" alt="{{ $slider->title }}" class="w-full h-[250px] md:h-[700px] object-cover">
                         @else
-                            <img src="https://placehold.co/1920x800/005eb8/ffffff?text={{ urlencode($slider->title) }}" alt="{{ $slider->title }}" class="w-full h-[500px] md:h-[700px] object-cover">
+                            <img src="https://placehold.co/1920x800/005eb8/ffffff?text={{ urlencode($slider->title) }}" alt="{{ $slider->title }}" class="w-full h-[250px] md:h-[700px] object-cover">
                         @endif
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="text-center px-4 max-w-4xl mx-auto z-10">
@@ -28,7 +28,7 @@
                     <!-- Fallback Slide -->
                      <div class="swiper-slide relative">
                         <div class="absolute inset-0 bg-black opacity-40"></div>
-                        <img src="https://placehold.co/1920x800/005eb8/ffffff?text=Lords+Mobility+EVs" alt="Hero Banner" class="w-full h-[500px] md:h-[700px] object-cover">
+                        <img src="https://placehold.co/1920x800/005eb8/ffffff?text=Lords+Mobility+EVs" alt="Hero Banner" class="w-full h-[250px] md:h-[700px] object-cover">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="text-center px-4 max-w-4xl mx-auto z-10">
                                 <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight" data-aos="fade-up">Future of Urban Mobility</h1>
