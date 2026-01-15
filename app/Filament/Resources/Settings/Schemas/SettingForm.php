@@ -14,14 +14,33 @@ class SettingForm
             ->components([
                 TextInput::make('key')
                     ->required(),
-                Textarea::make('value')
+                
+                \Filament\Forms\Components\FileUpload::make('value')
+                    ->hidden(fn (\Filament\Forms\Get $get) => $get('type') !== 'image')
+                    ->disk('public')
+                    ->directory('settings')
+                    ->image()
+                    ->imageEditor()
                     ->columnSpanFull(),
+
+                Textarea::make('value')
+                    ->hidden(fn (\Filament\Forms\Get $get) => $get('type') === 'image')
+                    ->columnSpanFull(),
+
                 TextInput::make('group')
                     ->required()
                     ->default('general'),
-                TextInput::make('type')
+                
+                \Filament\Forms\Components\Select::make('type')
+                    ->options([
+                        'text' => 'Text',
+                        'textarea' => 'Text Area',
+                        'image' => 'Image',
+                        'richtext' => 'Rich Text',
+                    ])
                     ->required()
-                    ->default('text'),
+                    ->default('text')
+                    ->live(),
             ]);
     }
 }

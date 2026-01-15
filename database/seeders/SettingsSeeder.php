@@ -110,6 +110,12 @@ class SettingsSeeder extends Seeder
                 'group' => 'stats',
                 'type' => 'text',
             ],
+            [
+                'key' => 'home_about_image',
+                'value' => null, // User will upload
+                'group' => 'home',
+                'type' => 'image',
+            ],
         ];
 
         foreach ($settings as $setting) {

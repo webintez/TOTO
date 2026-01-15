@@ -21,6 +21,8 @@ class HomeController extends Controller
             'experience' => \App\Models\Setting::where('key', 'stats_experience')->value('value') ?? '10',
         ];
 
-        return view('home', compact('sliders', 'featuredProducts', 'latestNews', 'testimonials', 'stats'));
+        $aboutImage = \App\Models\Setting::where('key', 'home_about_image')->value('value');
+
+        return view('home', compact('sliders', 'featuredProducts', 'latestNews', 'testimonials', 'stats', 'aboutImage'));
     }
 }

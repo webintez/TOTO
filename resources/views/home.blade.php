@@ -8,7 +8,7 @@
             <div class="swiper-wrapper">
                 @forelse($sliders as $slider)
                     <div class="swiper-slide relative">
-                        <div class="absolute inset-0 bg-black opacity-40"></div>
+
                         @if($slider->image)
                             <img src="{{ url(Storage::url($slider->image)) }}" alt="{{ $slider->title }}" class="w-full h-[250px] md:h-[700px] object-cover">
                         @else
@@ -27,7 +27,7 @@
                 @empty
                     <!-- Fallback Slide -->
                      <div class="swiper-slide relative">
-                        <div class="absolute inset-0 bg-black opacity-40"></div>
+
                         <img src="https://placehold.co/1920x800/005eb8/ffffff?text=Lords+Mobility+EVs" alt="Hero Banner" class="w-full h-[250px] md:h-[700px] object-cover">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="text-center px-4 max-w-4xl mx-auto z-10">
@@ -63,7 +63,11 @@
                     </a>
                 </div>
                 <div class="relative" data-aos="fade-left">
-                    <img src="https://placehold.co/600x400/e1e1e1/333333?text=About+Us+Image" alt="About Lords Mobility" class="rounded-lg shadow-xl w-full">
+                    @if(!empty($aboutImage))
+                        <img src="{{ url(Storage::url($aboutImage)) }}" alt="About Lords Mobility" class="rounded-lg shadow-xl w-full">
+                    @else
+                        <img src="https://placehold.co/600x400/e1e1e1/333333?text=About+Us+Image" alt="About Lords Mobility" class="rounded-lg shadow-xl w-full">
+                    @endif
                     <div class="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-lg hidden md:block">
                         <p class="text-4xl font-bold">25+</p>
                         <p class="text-sm uppercase tracking-wide">Years of Excellence</p>
