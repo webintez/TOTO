@@ -15,7 +15,7 @@ class SettingForm
                 TextInput::make('key')
                     ->required(),
                 
-                \Filament\Forms\Components\FileUpload::make('value')
+                \Filament\Forms\Components\FileUpload::make('value_image')
                     ->hidden(fn ($get) => $get('type') !== 'image')
                     ->disk('public')
                     ->directory('settings')
@@ -23,7 +23,7 @@ class SettingForm
                     ->imageEditor()
                     ->columnSpanFull(),
 
-                Textarea::make('value')
+                Textarea::make('value_text')
                     ->hidden(fn ($get) => $get('type') === 'image')
                     ->columnSpanFull(),
 
